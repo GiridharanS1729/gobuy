@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Details</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+    <script src="../scripts/product-details.js" defer></script>
+    <link rel="stylesheet" href="../styles/products.css">
+    <link rel="stylesheet" href="../styles/rat.css">
+    <script src="./scripts/cmn.js"></script>
+
+</head>
+
+<body>
+    <div class="container cont">
+        <div id="product-details" class="row justify-content-center">
+            <!-- Product details will be inserted here -->
+        </div>
+    </div>
+    <br>
+    <div class="rating-container">
+        <div class="rating-left">
+            <h4><b>Customer reviews</b></h4>
+            <br>
+            <div id="revrat"></div>
+        </div>
+        <div class="rating-right">
+            <h3>All Ratings:</h3>
+            <div id="ratings-list"></div>
+        </div>
+    </div>
+</body>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"
+    integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+</html>

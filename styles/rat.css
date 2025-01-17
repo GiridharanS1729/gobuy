@@ -1,0 +1,92 @@
+.rating-container {
+    display: flex;
+    flex-direction: row;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    margin: 20px auto;
+    font-family: Arial, sans-serif;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+/* left */
+
+.rating-left {
+    position: relative;
+}
+#revrat{
+    width: 30vw;
+    font-size: 20px;
+    line-height: 10px;
+}
+#revrat p{
+    font-weight: 700;
+    font-size: 16px;
+}
+.strtxt{
+    color: #00f;
+}
+.fstrs{
+    color: #de7921;
+}
+.strsdef{
+    color: #0f1111;
+}
+
+/* left */
+.rating-right {
+    width: 80%;
+    margin-right: 100px;
+}
+
+.rating-right h3 {
+    font-size: 24px;
+    font-weight: 600;
+    color: #333;
+    text-align: left;
+    margin-bottom: 15px;
+}
+
+.rating-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 10px;
+    background-color: #fff;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    transition: all 0.3s ease;
+}
+
+.rating-item:hover {
+    background-color: #f0f8ff;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+#ratings-list{
+    height: 40vh;
+    overflow-y: scroll;
+}
+
+/* scrollbar */
+#ratings-list::-webkit-scrollbar {
+    width: 20px;
+}
+
+#ratings-list::-webkit-scrollbar-thumb {
+    background-color: #a8a8a8;
+    border-radius: 5px;
+    border: 2px groove #f1f1f1;
+}
+
+#ratings-list::-webkit-scrollbar-thumb:hover {
+    background-color: #555;
+    cursor: grab;
+}
+
+#ratings-list::-webkit-scrollbar-track {
+    background-color: #f1f1f1;
+}

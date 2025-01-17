@@ -1,0 +1,138 @@
+/* Table Container */
+#itemsTable {
+    width: 100%;
+    max-width: 800px;
+    border-collapse: separate;
+    border-spacing: 0 15px;
+    margin: 20px 0;
+    background: transparent;
+    font-family: 'Segoe UI', system-ui, sans-serif;
+}
+
+/* Remove default table border */
+#itemsTable,
+#itemsTable th,
+#itemsTable td {
+    border: none;
+}
+
+/* Header Styling */
+#itemsTable thead tr {
+    background: linear-gradient(135deg, #6366f1, #8b5cf6);
+}
+
+#itemsTable th {
+    color: white;
+    padding: 15px 20px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 0.9rem;
+}
+
+#itemsTable th:first-child {
+    border-radius: 10px 0 0 10px;
+}
+
+#itemsTable th:last-child {
+    border-radius: 0 10px 10px 0;
+}
+
+/* Row Styling */
+#itemsTable tbody tr {
+    background: white;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+#itemsTable tbody tr:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+}
+
+/* Cell Styling */
+#itemsTable td {
+    padding: 20px;
+    background: white;
+}
+
+#itemsTable td:first-child {
+    border-radius: 10px 0 0 10px;
+    font-weight: 600;
+    color: #6366f1;
+}
+
+#itemsTable td:last-child {
+    border-radius: 0 10px 10px 0;
+}
+
+/* Price Styling */
+#itemsTable td:nth-child(3) {
+    font-weight: 600;
+    color: #059669;
+    font-size: 1.1rem;
+}
+
+#itemsTable td:nth-child(3)::before {
+    content: '$';
+    font-size: 0.8em;
+    margin-right: 2px;
+}
+
+/* Product Name Styling */
+#itemsTable td:nth-child(2) {
+    font-weight: 500;
+    color: #1f2937;
+}
+
+/* Image Styling */
+#itemsTable img {
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+#itemsTable img:hover {
+    transform: scale(1.15) rotate(2deg);
+}
+
+/* Responsive Design */
+@media screen and (max-width: 600px) {
+    #itemsTable {
+        font-size: 14px;
+    }
+
+    #itemsTable td,
+    #itemsTable th {
+        padding: 12px;
+    }
+
+    #itemsTable thead {
+        display: none;
+    }
+
+    #itemsTable tr {
+        display: block;
+        margin-bottom: 15px;
+    }
+
+    #itemsTable td {
+        display: block;
+        text-align: right;
+        border-radius: 0 !important;
+    }
+
+    #itemsTable td::before {
+        content: attr(data-label);
+        float: left;
+        font-weight: bold;
+        text-transform: uppercase;
+    }
+}
+
+/* Add a subtle background pattern */
+body {
+    background-color: #f9fafb;
+    background-image: radial-gradient(#e5e7eb 1px, transparent 1px);
+    background-size: 20px 20px;
+}
