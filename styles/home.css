@@ -1,0 +1,12 @@
+.dropdown-toggle::after {
+    display: none;
+}
+
+.dropdown-menu {
+    width: 6rem;
+    min-width: 0px;
+}
+
+.dropdown-menu[data-bs-popper] {
+    left: -20px;
+}

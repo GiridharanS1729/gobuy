@@ -7,20 +7,36 @@
     <title>Cart List</title>
     <script src="../scripts/cart.js"></script>
     <link rel="stylesheet" href="../styles/cart.css">
+    <link rel="stylesheet" href="../styles/ecart.css">
+    <link rel="stylesheet" href="../styles/footer.css">
+    <script src="../scripts/cmn.js"></script>
 </head>
 
 <body>
     <table id="itemsTable" border="1">
-        <thead>
-            <tr>
-                <th>Product ID</th>
-                <th>Name</th>
-                <th>Price</th>
-                <th>Image</th>
-            </tr>
-        </thead>
-        <tbody></tbody>
     </table>
+    <div id="cartMessage">
+        <div class="cart-icon">
+            <svg viewBox="0 0 24 24" width="48" height="48">
+                <path d="M4 4h2v2h14v-2h2v2h1v16H1V6h1V4h2zm0 4v12h16V8H4z" />
+            </svg>
+        </div>
+        <h2 class="cart-title">Your Shopping Cart is Empty</h2>
+        <p class="cart-description">Looks like you haven't added anything to your cart yet.</p>
+        <div class="suggestions">
+            <h3>What you can do:</h3>
+            <ul>
+                <li>Browse our featured products</li>
+                <li>Check out today's deals</li>
+                <li>View your saved items</li>
+            </ul>
+        </div>
+        <button class="shop-now-btn" onclick="window.location.href='./home.html'">Start Shopping</button>
+
+    </div>
+    <!-- footer -->
+    <div id="footer-placeholder"></div>
+    <!-- footer -->
 </body>
 
 </html>

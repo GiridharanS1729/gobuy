@@ -52,7 +52,7 @@ function renderProductDetails(product) {
     buy.className = "buy";
     buy.onclick = function () {
         window.open(`./buynow.html`, "_blank");
-        localStorage.setItem("plid",product.id);
+        localStorage.setItem("plid", product.id);
     };
     btns.appendChild(buy);
 
@@ -60,7 +60,7 @@ function renderProductDetails(product) {
     crt.textContent = "Add to Cart";
     crt.className = "crt";
 
-    
+
     crt.onclick = function () {
         let cartItems = JSON.parse(localStorage.getItem("cartitems")) || [];
         cartItems.push(product.id);
@@ -106,7 +106,8 @@ function renderProductDetails(product) {
     };
     addRatingButton.id = "add-rating-button";
     d2.appendChild(addRatingButton);
-
+    
+    productDetailsContainer.innerHTML = "";
     productDetailsContainer.appendChild(d1);
     productDetailsContainer.appendChild(d2);
 
@@ -116,8 +117,8 @@ function renderProductDetails(product) {
     avgrat.className = "fstrs";
     const anns = calculateAverageRating(product.stars);
     const post = "★".repeat(Math.floor(anns));
-    const hlf = (anns * 10) % 10 >= 1 ? "⯪":"";
-    const negt = 5 - (post.length+hlf.length);
+    const hlf = (anns * 10) % 10 >= 1 ? "⯪" : "";
+    const negt = 5 - (post.length + hlf.length);
     // console.log(post + hlf + negt + anns);
     avgrat.textContent = post;
     avgrat.textContent += hlf;
@@ -127,11 +128,12 @@ function renderProductDetails(product) {
 
     avgrat.innerHTML += "&nbsp;".repeat(5);
     avgrat.innerHTML += `${averageRating.toFixed(1)} <span class="strsdef">out of 5 stars</span>`;
+    ratrev.innerHTML = "";
     ratrev.appendChild(avgrat);
 
     const totrat = document.createElement('span');
     totrat.style = `color:#00f;font-size:16px;`;
-    totrat.innerHTML = "Total "+product.stars.length + " ratings<br/><br/>";
+    totrat.innerHTML = "Total " + product.stars.length + " ratings<br/><br/>";
     ratrev.appendChild(totrat);
 
     const revstrs = document.createElement('div');
@@ -188,7 +190,6 @@ function renderProductDetails(product) {
 
 
     ratrev.appendChild(revstrs);
-    // ratings
     fetchRatings(product.id);
 }
 
@@ -285,7 +286,18 @@ function displayRatings(textRatings, stars) {
     });
 }
 
-window.onload = function () {fetchProductDetails();};
+window.onload = function () {
+    const user = localStorage.getItem("userData");
+    const upid = localStorage.getItem("pid");
+    if (user && upid) {
+        fetchProductDetails();
+    }
+    else if (!upid && user) {
+        window.location.href = "/files/home.html";
+    }
+    else {
+        window.location.href = "/index.html";
+    }
+};
 
-const pricefrmt = (pri) => { return `₹${pri.toLocaleString('en-IN')}`; } 
-  
+const pricefrmt = (pri) => { return `₹${pri.toLocaleString('en-IN')}`; }

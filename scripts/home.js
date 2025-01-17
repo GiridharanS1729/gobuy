@@ -42,7 +42,7 @@ function renderCards() {
         cardElement.classList.add('card', 'h-100');
 
         const img = document.createElement('img');
-        img.src = "../assets"+card.image;
+        img.src = "../assets" + card.image;
         img.classList.add('card-img-top');
         img.alt = card.name;
         img.style.height = '200px';
@@ -61,7 +61,7 @@ function renderCards() {
 
         const cardPrice = document.createElement('p');
         cardPrice.classList.add('card-text', 'text-primary');
-        cardPrice.textContent =  pricefrmt(card.price);
+        cardPrice.textContent = pricefrmt(card.price);
 
         const averageRating = calculateAverageRating(card.stars);
         const ratingText = document.createElement('p');
@@ -94,7 +94,30 @@ function calculateAverageRating(stars) {
 }
 
 window.onload = function () {
-    fetchProducts();
+    const user = localStorage.getItem("userData");
+    if (user) {
+        fetchProducts();
+    }
+    else {
+        window.location.href = "/index.html";
+    }
 };
 
-const pricefrmt=(pri)=> {return `₹${pri.toLocaleString('en-IN')}`;} 
+const pricefrmt = (pri) => { return `₹${pri.toLocaleString('en-IN')}`; } 
+
+function logout() {
+    localStorage.removeItem("userData");
+    localStorage.removeItem("plid");
+    localStorage.removeItem("pid");
+
+    Swal.fire({
+        title: 'Success!',
+        text: 'Logged out Successfully.',
+        icon: 'success',
+        confirmButtonText: 'OK'
+    }).then((result) => {
+        if (result.isConfirmed) {
+            window.location.href = '/index.html';
+        }
+    });
+}
