@@ -202,7 +202,7 @@ async function analyzeSentiments(textRatings, product) {
             })
         );
         const newStarRating = results.map(sentiment => getStarRating(sentiment));
-        const productId = new URLSearchParams(window.location.search).get('id');
+        const productId = localStorage.getItem("pid");//new URLSearchParams(window.location.search).get('id');
         const textRating = textRatings[0];
 
         const response = await axios.put(`${prt}/products/${productId}`, {
