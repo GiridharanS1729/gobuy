@@ -17,7 +17,7 @@ GoBuy is a fully functional e-commerce website that provides users with a seamle
 Check out the deployed version of GoBuy: [GoBuy Live Site](https://gobuyz.vercel.app/)  
 
 ### Demo Video  
-![Demo](./output/demo.gif)  
+![Watch Demo Video](https://gobuyz.vercel.app/output/demo.gif)
 
 ## Getting Started  
 To set up the project locally, follow these steps:  
